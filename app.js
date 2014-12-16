@@ -5,7 +5,7 @@ app.use(express.static("public"));
 
 /**
  * @api {get} /signin Singin
- * @apiGroup Sistema
+ * @apiGroup Autenticação
  *
  * @apiSuccess {String} status Mensagem de acesso autorizado
  * 
@@ -22,7 +22,7 @@ app.get("/signin", function(req, res) {
 
 /**
  * @api {post} /signup Signup
- * @apiGroup Sistema
+ * @apiGroup Autenticação
  *
  * @apiSuccess {String} status Mensagem de cadastro efetuado
  * 
@@ -39,14 +39,14 @@ app.post("/signup", function(req, res) {
 
 /**
  * @api {delete} /logout Logout
- * @apiGroup Sistema
+ * @apiGroup Autenticação
  *
  * @apiSuccess {String} status Mensagem de saída do sistema
  * 
  * @apiSuccessExample {json} Sucesso
  *    HTTP/1.1 200 OK
  *    {
- *      "status": "Saindo do sistema!"
+ *      "status": "Você saiu do sistema!"
  *    }
  *
  */
@@ -55,8 +55,8 @@ app.delete("/logout", function(req, res) {
 });
 
 /**
- * @api {put} /update Update
- * @apiGroup Sistema
+ * @api {put} /pagamento/:codigo Pagamento com código de barras
+ * @apiGroup Pagamentos
  *
  * @apiSuccess {String} status Mensagem de dados atualizados
  * 
@@ -67,7 +67,7 @@ app.delete("/logout", function(req, res) {
  *    }
  *
  */
-app.put("/update", function(req, res) {
+app.put("/pagamento/:codigo", function(req, res) {
   res.json({status: "Dados atualizados!"});
 });
 
