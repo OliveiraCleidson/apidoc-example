@@ -1,43 +1,29 @@
-var express = require("express");
-var app = express();
-
-app.use(express.static("public"));
-
 /**
  * @api {get} /signin Singin
  * @apiVersion 0.0.1
  * @apiGroup Autenticação
- *
  * @apiSuccess {String} status Mensagem de acesso autorizado
- * 
  * @apiSuccessExample {json} Sucesso
  *    HTTP/1.1 200 OK
  *    {
  *      "status": "Logado!"
  *    }
- *
  */
-app.get("/signin", function (req, res) {
-  res.json({ status: "Logado!" });
-});
 
 /**
- * @apiVersion 0.0.1
- * @api {post} /signup Signup
- * @apiGroup Autenticação
- *
- * @apiSuccess {String} status Mensagem de cadastro efetuado
- * 
- * @apiSuccessExample {json} Sucesso
- *    HTTP/1.1 200 OK
- *    {
- *      "status": "Cadastrado!"
- *    }
- *
- */
-app.post("/signup", function (req, res) {
-  res.json({ status: "Cadastrado!" });
-});
+* @apiVersion 0.0.1
+* @api {post} /signup Signup
+* @apiGroup Autenticação
+*
+* @apiSuccess {String} status Mensagem de cadastro efetuado
+*
+* @apiSuccessExample {json} Sucesso
+*    HTTP/1.1 200 OK
+*    {
+*      "status": "Cadastrado!"
+*    }
+*
+*/
 
 /**
  * @apiVersion 0.0.1
@@ -45,7 +31,7 @@ app.post("/signup", function (req, res) {
  * @apiGroup Autenticação
  *
  * @apiSuccess {String} status Mensagem de saída do sistema
- * 
+ *
  * @apiSuccessExample {json} Sucesso
  *    HTTP/1.1 200 OK
  *    {
@@ -53,9 +39,6 @@ app.post("/signup", function (req, res) {
  *    }
  *
  */
-app.delete("/logout", function (req, res) {
-  res.json({ status: "Saindo do sistema!" });
-});
 
 /**
  * @apiVersion 0.0.1
@@ -63,7 +46,7 @@ app.delete("/logout", function (req, res) {
  * @apiGroup Pagamentos
  *
  * @apiSuccess {String} status Mensagem de dados atualizados
- * 
+ *
  * @apiSuccessExample {json} Sucesso
  *    HTTP/1.1 200 OK
  *    {
@@ -71,11 +54,3 @@ app.delete("/logout", function (req, res) {
  *    }
  *
  */
-app.put("/pagamento/:codigo", function (req, res) {
-  res.json({ status: "Dados atualizados!" });
-});
-
-
-app.listen(3000, function () {
-  console.log("Api up and running!");
-});
