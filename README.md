@@ -18,9 +18,10 @@ node app.js
 ```
 
 ## Gerando documentação
-
+O parâmetro -f filtra quais arquivos serão documentos, <b>app.js</b> será o arquivo de utilização atual da aplicação enquanto <b>_apidoc.js</b> guarda o histórico de versionamento. 
+O parâmetro -o indica qual pasta será gerado a documentação.
 ``` bash
-apidoc -f app.js -o public/apidoc
+apidoc -f app.js -f _apidoc.js -o public/apidoc
 ```
 
 ## Visualizando documentação
